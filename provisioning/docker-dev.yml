@@ -1,0 +1,10 @@
+---
+#######
+# Playbook for provisioning a docker dev environment
+
+-
+  hosts: all
+  roles:
+    - debian
+    - docker
+  

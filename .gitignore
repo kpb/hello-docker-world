@@ -1,0 +1,5 @@
+*.retry
+.gradle
+.nb-gradle*
+.vagrant
+build

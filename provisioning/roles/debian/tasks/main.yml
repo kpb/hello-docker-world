@@ -1,0 +1,28 @@
+---
+#######
+#
+# Debian specific tasks
+#
+#######
+# apt requires https transport. Install it.
+#
+- name: install https transport for apt
+  apt:
+    name: apt-transport-https
+    state: present
+
+#######
+# Use the backports repo to get java 8
+#
+- name: add debian backports repo
+  apt_repository:
+    repo: 'deb http://ftp.debian.org/debian jessie-backports main'
+    state: present
+    update_cache: yes
+
+#######
+# Install Java 8
+- name: install java 8
+  apt:
+    name: openjdk-8-jdk
+    state: latest
