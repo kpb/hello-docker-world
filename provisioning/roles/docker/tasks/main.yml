@@ -33,7 +33,7 @@
 
 #######
 #
-# Install docker engine from github
+# Install docker compose from github
 - name: register kernel name
   shell: uname -s
   register: kernel_name
@@ -42,7 +42,7 @@
   shell: uname -m
   register: hardware_name
 
-- name: get docker engine from github
+- name: get docker compose from github
   get_url:
     url: >
       https://github.com/docker/compose/releases/download/1.9.0-rc4/docker-compose-{{ kernel_name.stdout }}-{{ hardware_name.stdout }}
